@@ -1,21 +1,241 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+import ProductGrid from '../components/ProductGrid.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-4" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="text-lg mb-10" />
-    <p class="mb-8">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg btn-primary sm:btn-wide">Read the Docs</a>
-    </p>
+<Layout title="Sairaj Globalex - Premium Areca Leaf Plates">
+    <!-- Hero Section -->
+    <section id="home" class="py-20 text-center animate-fade-in">
+        <div class="mb-8">
+            <h1 class="text-5xl md:text-6xl font-bold text-forest-green mb-4 animate-slide-up">
+                Sairaj Globalex
+            </h1>
+            <p class="text-2xl md:text-3xl text-olive-green font-semibold mb-6 animate-slide-up" style="animation-delay: 0.2s;">
+                Premium Areca Leaf Plates
+            </p>
+            <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 animate-slide-up" style="animation-delay: 0.4s;">
+                Sustainable, Eco-Friendly, and 100% Natural Tableware Solutions for a Greener Tomorrow
+            </p>
+            <div class="flex gap-4 justify-center animate-slide-up" style="animation-delay: 0.6s;">
+                <a href="#products" class="bg-forest-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-olive-green transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Explore Products
+                </a>
+                <a href="#contact" class="bg-white text-forest-green border-2 border-forest-green px-8 py-3 rounded-lg font-semibold hover:bg-forest-green hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Hero Image/Icon -->
+        <div class="mt-12 text-9xl animate-slide-up" style="animation-delay: 0.8s;">
+            🌿🍃
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gradient-to-r from-sand-beige to-natural-tan rounded-2xl my-12 px-8 animate-fade-in">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-forest-green mb-6">About Sairaj Globalex</h2>
+            <p class="text-lg text-gray-800 leading-relaxed mb-6">
+                At Sairaj Globalex, we are committed to providing premium quality, eco-friendly tableware solutions 
+                made from naturally fallen areca palm leaves. Our products are 100% biodegradable, chemical-free, 
+                and perfect for those who care about the environment.
+            </p>
+            <p class="text-lg text-gray-800 leading-relaxed">
+                With a focus on sustainability and quality, we serve customers worldwide, offering a wide range 
+                of plates, bowls, trays, and specialty items that combine traditional craftsmanship with modern design.
+            </p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-16 animate-fade-in">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 transform transition-all duration-300 hover:shadow-2xl">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl mr-4">👁️</div>
+                    <h2 class="text-4xl font-bold text-forest-green">Our Vision</h2>
+                </div>
+                <p class="text-lg text-gray-800 leading-relaxed text-center">
+                    To become a global leader in sustainable tableware solutions, promoting eco-friendly practices 
+                    and reducing plastic waste worldwide. We envision a future where every meal is served on 
+                    nature-friendly products, contributing to a cleaner and greener planet for generations to come.
+                </p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-leaf-green/10 rounded-lg">
+                        <div class="text-3xl mb-2">🌍</div>
+                        <h3 class="font-bold text-forest-green mb-2">Global Reach</h3>
+                        <p class="text-sm text-gray-700">Expanding sustainable solutions worldwide</p>
+                    </div>
+                    <div class="text-center p-4 bg-leaf-green/10 rounded-lg">
+                        <div class="text-3xl mb-2">♻️</div>
+                        <h3 class="font-bold text-forest-green mb-2">Zero Waste</h3>
+                        <p class="text-sm text-gray-700">100% biodegradable products</p>
+                    </div>
+                    <div class="text-center p-4 bg-leaf-green/10 rounded-lg">
+                        <div class="text-3xl mb-2">🌱</div>
+                        <h3 class="font-bold text-forest-green mb-2">Sustainability</h3>
+                        <p class="text-sm text-gray-700">Protecting our environment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-16 animate-fade-in">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-br from-forest-green to-olive-green rounded-2xl shadow-xl p-8 md:p-12 text-white transform transition-all duration-300 hover:shadow-2xl">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl mr-4">🎯</div>
+                    <h2 class="text-4xl font-bold">Our Mission</h2>
+                </div>
+                <p class="text-lg leading-relaxed text-center mb-8">
+                    Our mission is to manufacture and supply high-quality, eco-friendly areca leaf products that 
+                    meet international standards while supporting local communities and preserving traditional 
+                    craftsmanship. We are dedicated to:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-2xl">✓</div>
+                        <div>
+                            <h3 class="font-bold mb-2">Quality Excellence</h3>
+                            <p class="text-sm opacity-90">Delivering premium products that exceed customer expectations</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-2xl">✓</div>
+                        <div>
+                            <h3 class="font-bold mb-2">Environmental Care</h3>
+                            <p class="text-sm opacity-90">Reducing plastic waste and promoting sustainable alternatives</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-2xl">✓</div>
+                        <div>
+                            <h3 class="font-bold mb-2">Community Support</h3>
+                            <p class="text-sm opacity-90">Empowering local artisans and creating employment opportunities</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-2xl">✓</div>
+                        <div>
+                            <h3 class="font-bold mb-2">Innovation</h3>
+                            <p class="text-sm opacity-90">Continuously improving our products and processes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 animate-fade-in">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-forest-green mb-4">Our Products</h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                Discover our wide range of eco-friendly areca leaf products, perfect for any occasion
+            </p>
+        </div>
+        <ProductGrid />
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white rounded-2xl my-12 px-8 animate-fade-in">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-forest-green text-center mb-12">Why Choose Sairaj Globalex?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 transform transition-all duration-300 hover:scale-105">
+                    <div class="text-5xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold text-forest-green mb-3">100% Natural</h3>
+                    <p class="text-gray-700">Made from naturally fallen areca palm leaves</p>
+                </div>
+                <div class="text-center p-6 transform transition-all duration-300 hover:scale-105">
+                    <div class="text-5xl mb-4">♻️</div>
+                    <h3 class="text-xl font-bold text-forest-green mb-3">Biodegradable</h3>
+                    <p class="text-gray-700">Completely compostable within 60 days</p>
+                </div>
+                <div class="text-center p-6 transform transition-all duration-300 hover:scale-105">
+                    <div class="text-5xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold text-forest-green mb-3">Heat Resistant</h3>
+                    <p class="text-gray-700">Suitable for hot and cold foods</p>
+                </div>
+                <div class="text-center p-6 transform transition-all duration-300 hover:scale-105">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold text-forest-green mb-3">Premium Quality</h3>
+                    <p class="text-gray-700">Handcrafted with attention to detail</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 animate-fade-in">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-br from-sand-beige to-natural-tan rounded-2xl shadow-xl p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-forest-green text-center mb-8">Get In Touch</h2>
+                <p class="text-center text-gray-800 mb-8 text-lg">
+                    Interested in our products? Contact us for bulk orders, custom requirements, or any inquiries.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-4">📧</div>
+                            <div>
+                                <h3 class="font-bold text-forest-green">Email</h3>
+                                <p class="text-gray-700">info@sairajglobalex.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-4">📱</div>
+                            <div>
+                                <h3 class="font-bold text-forest-green">Phone</h3>
+                                <p class="text-gray-700">+91 XXXXX XXXXX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input 
+                            type="text" 
+                            placeholder="Your Name" 
+                            class="w-full px-4 py-3 rounded-lg border-2 border-forest-green/30 focus:border-forest-green focus:outline-none transition-colors"
+                        />
+                        <input 
+                            type="email" 
+                            placeholder="Your Email" 
+                            class="w-full px-4 py-3 rounded-lg border-2 border-forest-green/30 focus:border-forest-green focus:outline-none transition-colors"
+                        />
+                    </div>
+                    <input 
+                        type="text" 
+                        placeholder="Subject" 
+                        class="w-full px-4 py-3 rounded-lg border-2 border-forest-green/30 focus:border-forest-green focus:outline-none transition-colors"
+                    />
+                    <textarea 
+                        placeholder="Your Message" 
+                        rows="5" 
+                        class="w-full px-4 py-3 rounded-lg border-2 border-forest-green/30 focus:border-forest-green focus:outline-none transition-colors"
+                    ></textarea>
+                    <button 
+                        type="submit" 
+                        class="w-full bg-forest-green text-white py-3 rounded-lg font-semibold hover:bg-olive-green transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 </Layout>
+
+<style>
+    section {
+        scroll-margin-top: 100px;
+    }
+</style>

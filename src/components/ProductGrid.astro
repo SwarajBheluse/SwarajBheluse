@@ -1,0 +1,79 @@
+---
+import ProductCard from './ProductCard.astro';
+import { products, productCategories } from '../data/products';
+---
+
+<div class="product-grid-container">
+    <!-- Category Filter -->
+    <div class="mb-8 flex flex-wrap gap-3 justify-center">
+        {productCategories.map(category => (
+            <button 
+                class="category-btn px-6 py-2 rounded-full font-semibold transition-all duration-300 border-2"
+                data-category={category}
+            >
+                {category}
+            </button>
+        ))}
+    </div>
+
+    <!-- Products Grid -->
+    <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map(product => (
+            <div class="product-item" data-category={product.category}>
+                <ProductCard 
+                    name={product.name}
+                    category={product.category}
+                    size={product.size}
+                    description={product.description}
+                    features={product.features}
+                    image={product.image}
+                />
+            </div>
+        ))}
+    </div>
+</div>
+
+<script>
+    // Category filtering
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const productItems = document.querySelectorAll('.product-item');
+
+    // Set initial active state
+    categoryButtons[0]?.classList.add('bg-forest-green', 'text-white', 'border-forest-green');
+    categoryButtons.forEach((btn, index) => {
+        if (index !== 0) {
+            btn.classList.add('bg-white', 'text-forest-green', 'border-forest-green', 'hover:bg-forest-green', 'hover:text-white');
+        }
+    });
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedCategory = button.getAttribute('data-category');
+            
+            // Update active button
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('bg-forest-green', 'text-white');
+                btn.classList.add('bg-white', 'text-forest-green', 'hover:bg-forest-green', 'hover:text-white');
+            });
+            button.classList.remove('bg-white', 'hover:bg-forest-green', 'hover:text-white');
+            button.classList.add('bg-forest-green', 'text-white');
+
+            // Filter products
+            productItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (selectedCategory === 'All Products' || itemCategory === selectedCategory) {
+                    item.style.display = 'block';
+                    item.classList.add('animate-fade-in');
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    .product-item {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+</style>
